@@ -305,7 +305,7 @@ class Blotter(object):
         Parameters
         ----------
         splits: list
-            A list of splits.  Each split is a tuple of (sid, ratio), where
+            A list of splits.  Each split is a tuple of (asset, ratio), where
             sid is an integer.
 
         Returns
@@ -313,8 +313,7 @@ class Blotter(object):
         None
         """
         for split in splits:
-            sid = split[0]
-            asset = self.asset_finder.retrieve_asset(sid)
+            asset = split[0]
             if asset not in self.open_orders:
                 return
 
